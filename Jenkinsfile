@@ -4,15 +4,15 @@ pipeline {
         maven 'M2_HOME'
     }
     environment {
-    registry = '076892551558.dkr.ecr.us-west-2.amazonaws.com/jenkins_ecr_registry'
-    //registryCredential = 'jenkins-role'
-    region = 'us-west-2'
+    registry = '695552263821.dkr.ecr.us-east-1.amazonaws.com/second_repo'
+    //registryCredential = 'jenkins-ecr'
+    region = 'us-east-1'
     dockerimage = ''
   }
     stages {
         stage('Checkout'){
             steps{
-                git branch: 'main', url: 'https://github.com/Hermann90/helloworld_jan_22.git'
+                git branch: 'main', url: 'https://github.com/Mugs3/helloworld_jan_22.git'
             }
         }
         stage('Code Build') {
