@@ -39,7 +39,6 @@ pipeline {
                     //sh 'aws ecr get-login-password --region "${region}"| docker login --username AWS --password-stdin "${registry}"'
                 }
             }
-        }
 
         stage('Deploy image') {
             steps{
