@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Code Build') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean install package'
             }
         }
         stage('Test') {
@@ -43,7 +43,7 @@ pipeline {
         stage('Deploy image') {
             steps{
                 script{ 
-                    
+                    docker.withRegistry("https://"+registry,"ecr:us-east-1:"+registryCredential) {
                         dockerImage.push()
                     
                 }
